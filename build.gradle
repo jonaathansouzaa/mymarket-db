@@ -34,9 +34,11 @@ dependencies {
 
 liquibase {
     activities {
-        changeLogFile "$projectDir/src/main/resources/br/com/fadergs/mymarket/db/changelog.xml"
-        url 'jdbc:mysql://localhost:3306/mymarket'
-        username "root"
-        password "Mon@2018"
+    	main {
+    		changeLogFile "$projectDir/src/main/resources/br/com/fadergs/mymarket/db/changelog.xml"
+	        url 'jdbc:mysql://localhost:3306/mymarket?nullNamePatternMatchesAll=true&useTimezone=true&serverTimezone=UTC'
+	        username "root"
+	        password "Mon@2018"
+    	}
     }
 }
